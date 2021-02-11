@@ -1,0 +1,35 @@
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    margin-bottom: 10px;
+    column-gap: 10px;
+    &__item{
+        flex: 1;
+        height: 100%;
+        font-size: 26px;
+        text-decoration: none;
+        text-align: center;
+        background: #00b4ef;
+        box-shadow: 2px 0px 9px 2px #b5e4f3;
+        color: #fff;
+
+        transition: .15s ease;
+
+        &.active{
+            background-color: #0e7ea3;
+            transform: scale(1.05);
+
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+        &:hover{
+            transform: scale(0.95);
+            color: #fff;
+            background-color: #0e7ea3;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.error{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    &__item{
+        margin: 0 auto;
+        margin-top: 5px;
+        max-width: 520px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        opacity: 1;
+        transition: .15s ease-in-out;
+
+        &.hiding{
+            opacity: 0;
+        }
+        p{
+            margin: 0;
+        }
+    }
+}

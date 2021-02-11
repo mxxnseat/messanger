@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Form from "./components/form";
+import Chat from "./components/chat";
+import Error from "./components/error";
+
+import "./scss/app.scss";
+
+
+const App = () => {
+    const authorizationCheck = useSelector(({ login }) => login.authorized);
+    const errors = useSelector(({ errors }) => errors.errors);
+
+    return (
+        <React.Fragment>
+            {
+                errors.length ? 
+                <div className="error">{
+                    errors.map(error => <Error key={error.id} {...error} />)
+                }</div> : ''
+            }
+
+            <div className="container container_full-height">
+                <div className="wrapper">
+                    {
+                        authorizationCheck ? <Chat /> : <Form />
+                    }
+
+                </div>
+            </div>
+        </React.Fragment>
+    )
 }
+
+
 
 export default App;
