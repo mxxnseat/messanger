@@ -1,9 +1,10 @@
 Импортируйте или создайте таблицу users
 
-1 stack: 
-2 react;
-3 redux;
-4 react-router-dom;
-5 bootstram components;
-6 socket.io;
-7 react/redux hooks
+stack:
+
+1 react;
+2 redux;
+3 react-router-dom;
+4 bootstram components;
+5 socket.io;
+6 react/redux hooks
