@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Form from "./components/form";
 import Chat from "./components/chat";
@@ -9,8 +9,9 @@ import "./scss/app.scss";
 
 
 const App = () => {
-    const authorizationCheck = useSelector(({ login }) => login.authorized);
     const errors = useSelector(({ errors }) => errors.errors);
+    const userData = useSelector(({login}) => login);
+
 
     return (
         <React.Fragment>
@@ -22,12 +23,9 @@ const App = () => {
             }
 
             <div className="container container_full-height">
-                <div className="wrapper">
                     {
-                        authorizationCheck ? <Chat /> : <Form />
+                        userData.user ? <Chat /> : <Form />
                     }
-
-                </div>
             </div>
         </React.Fragment>
     )

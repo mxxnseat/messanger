@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {withRouter} from "react-router-dom";
 
 import { setError } from "../../store/actions/errors";
 import { login as loginAction } from "../../store/actions/authorization";
 import { useDispatch, useSelector } from "react-redux";
 
-const Form = () => {
+const Form = ({history}) => {
   const id = useSelector(({ errors }) => errors.errors.length);
   const [inputValues, setInputValue] = useState({
     login: '',
@@ -40,6 +41,7 @@ const Form = () => {
         return;
       }
       dispatch(loginAction(data.user));
+      history.push("/");
     })
   }
 
@@ -96,4 +98,4 @@ const Form = () => {
   )
 }
 
-export default Form;
+export default withRouter(Form);

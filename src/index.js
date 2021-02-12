@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from "./app";
 
-
 import store from "./store";
 
 ReactDOM.render(

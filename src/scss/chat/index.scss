@@ -1,0 +1,29 @@
+.chat{
+    margin-top: auto;
+    width: 600px;
+    margin-bottom: 50px;
+
+    &__form{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 5px;
+        align-items: flex-start;
+    }
+    &__textarea{
+        min-height: 30px;
+        outline: 1px solid black;
+        overflow-y: hidden;
+
+        flex-grow: 1;
+    }
+    &__send{
+        height: 30px;
+        border: none;
+        outline: 1px solid black;
+    }
+    .messages__item{
+        display: flex;
+        column-gap: 10px;
+        margin-bottom: 20px;
+    }
+}

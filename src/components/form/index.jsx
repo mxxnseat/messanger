@@ -9,7 +9,7 @@ import "../../scss/form/index.scss";
 
 export default () => {
   return (
-    <React.Fragment>
+    <div className="authorization">
 
       <Navigation />
       <Switch>
@@ -17,6 +17,6 @@ export default () => {
         <Route path="/register" exact component={Register} />
       </Switch>
 
-    </React.Fragment>
+    </div>
   );
 };
